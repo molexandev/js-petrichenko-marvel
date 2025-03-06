@@ -1,7 +1,8 @@
 class MarvelService {
    _apiBase = 'https://gateway.marvel.com:443/v1/public/';
    // ЗДЕСЬ БУДЕТ ВАШ КЛЮЧ, ЭТОТ КЛЮЧ МОЖЕТ НЕ РАБОТАТЬ
-   _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
+   // _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
+   _apiKey = 'apikey=3d3264ceff7b7cd2ac676b095784f585';
 
    getResource = async (url) => {
       let res = await fetch(url);
@@ -37,6 +38,7 @@ class MarvelService {
          thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
          homepage: char.urls[0].url,
          wiki: char.urls[1].url,
+         comics: char.comics.items,
       };
    };
 }
